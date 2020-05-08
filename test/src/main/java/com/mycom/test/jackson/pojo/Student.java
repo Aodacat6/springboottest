@@ -2,6 +2,7 @@ package com.mycom.test.jackson.pojo;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
  * @version: 1.0
  */
 @Data
-public class Student {
+public class Student implements Serializable {
 
     private int age;
 

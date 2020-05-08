@@ -1,11 +1,32 @@
 package com.mycom.test.jackson.util;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author ：songdalin
  * @date ：2020-05-08 下午 07:18
- * @description：
+ * @description： 单例模式实现ObjectMapper工具类
  * @modified By：
  * @version: 1.0
  */
-public class JsonUtil {
+@Slf4j
+public final class JsonUtil {
+
+    private JsonUtil(){}
+
+    private static ObjectMapper objectMapper = new ObjectMapper();
+
+    public static <T> String obj2String(T obj){
+        if(obj == null){
+            return "";
+        }
+        try {
+            return obj instanceof String ? (String)obj : objectMapper.writeValueAsString(obj);
+        } catch (JsonProcessingException e) {
+            log.error(e.toString());
+        }
+        return "";
+    }
 }
