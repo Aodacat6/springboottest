@@ -3,6 +3,7 @@ package com.mycom.test.jackson.util;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.StringUtils;
 
 /**
  * @author ：songdalin
@@ -28,5 +29,17 @@ public final class JsonUtil {
             log.error(e.toString());
         }
         return "";
+    }
+
+    public static <T> T string2Obj(String str, Class<T> clazz){
+        if (str == null || clazz == null || StringUtils.isEmpty(str)){
+            return null;
+        }
+        try {
+            return clazz.equals(String.class) ? (T)str : objectMapper.readValue(str, clazz);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

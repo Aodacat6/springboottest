@@ -67,6 +67,6 @@ public class JacksonTest {
         }
         System.out.println(b);
 
-        System.out.println(JsonUtil.);
+        //System.out.println(JsonUtil.);
     }
 }
