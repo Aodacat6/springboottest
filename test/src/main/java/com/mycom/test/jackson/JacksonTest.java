@@ -42,10 +42,12 @@ public class JacksonTest {
             e.printStackTrace();
         }
 
+/*
         System.out.println("标准输出：");
         System.out.println(str);
         System.out.println("格式化输出:");
         System.out.println(strFormat);
+*/
 
 
         String jsonStr = "{\"age\":18,\"name\":\"小米\",\"bookList\":[{\"bookName\":\"语文\",\"bookPrice\":20.3},{\"bookName\":\"数学\",\"bookPrice\":30.0}]}";
@@ -65,8 +67,11 @@ public class JacksonTest {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        System.out.println(b);
+        //System.out.println(b);
 
         //System.out.println(JsonUtil.);
+
+        //System.out.println(JsonUtil.obj2String(student));
+        System.out.println(JsonUtil.string2Obj(jsonStr, Student.class));
     }
 }
