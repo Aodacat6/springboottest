@@ -1,6 +1,7 @@
 package com.mycom.test.jackson.pojo;
 
-import lombok.Data;
+import jdk.nashorn.internal.ir.annotations.Ignore;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.List;
@@ -12,7 +13,11 @@ import java.util.List;
  * @modified By：
  * @version: 1.0
  */
-@Data
+//@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Student implements Serializable {
 
     private int age;
