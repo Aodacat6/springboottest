@@ -2,6 +2,8 @@ package com.mycom.test.singleton;
 
 import com.mycom.test.jackson.pojo.Student;
 
+import java.io.File;
+
 /**
  * @author ：songdalin
  * @date ：2020-05-11 下午 06:32
@@ -21,6 +23,12 @@ public class SingletonTest {
     }
 
     public static void outStudent(){
-        System.out.println(StudentSingleton.getStudent());
+        try {
+            System.out.println(StudentSingleton.getStudent());
+
+        }catch (Exception e){
+            throw new RuntimeException(e.toString());
+        }
+
     }
 }

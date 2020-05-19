@@ -13,7 +13,7 @@ import java.util.List;
  * @modified By：
  * @version: 1.0
  */
-//@Data
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
